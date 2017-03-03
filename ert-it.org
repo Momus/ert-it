@@ -1,5 +1,18 @@
+#+TITLE: ert-it
+#+AUTHOR: Dmitri Brengauz
+#+EXPORT_FILE_NAME: README.md
 
-#+PROPERTY: header-args:sh :dir /etc
+* README
+  :PROPERTIES:
+ 
+  :END:
+
+*** Intro
+    Please see the documentation in ert-it.el for now
+
+*** About this Project
+    Uses Babel Org, everything is in one file: file:ert-it.org, where
+    all the changes should go.
 
 * ert-it 
   #+BEGIN_SRC sh
