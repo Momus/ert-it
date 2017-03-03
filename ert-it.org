@@ -1,0 +1,46 @@
+
+#+PROPERTY: header-args:sh :dir /etc
+
+* ert-it 
+  #+BEGIN_SRC sh
+  ls -d $(pwd)
+  #+END_SRC
+
+  #+RESULTS:
+  : /etc
+
+
+  #+BEGIN_SRC emacs-lisp :tangle ert-it.el
+    ;;; package --- Summary
+    ;; Find and run all your tests.
+
+    ;;; Commentary:
+    ;; Best used while the tune to Michael Jackson's \"Beat
+    ;; It!\" runs through your head.
+
+    ;;; Code:
+    (defun ert-it ()
+      "Look for a test file recursively in the working directory.
+    Then evaluate and feed it into \\[ert].
+
+    With \\[universal-argument] it will grab all files of the
+    type \"*-test.el\" recursively in the working directory."
+      (interactive))
+
+    (provide 'ert-it)
+    ;;; ert-it ends here
+  #+END_SRC
+* tests
+
+  #+BEGIN_SRC emacs-lisp  :tangle ert-it-test.el
+    ;;; ert-it-test.el --- Tests for ert-it
+
+    ;;; Commentary:
+
+    ;;; Code:
+    (load-file "ert-it.el")
+
+    (provide 'ert-it-test)
+    ;;; ert-it-test ends here
+  #+END_SRC
+
