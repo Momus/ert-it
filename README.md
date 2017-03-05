@@ -2,52 +2,52 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orged34223">1. README</a>
+<li><a href="#org0d65268">1. README</a>
 <ul>
-<li><a href="#org28e7c5c">1.1. Intro</a></li>
-<li><a href="#orgd897343">1.2. About this Project</a></li>
+<li><a href="#org254261c">1.1. Intro</a></li>
+<li><a href="#org686dae7">1.2. About this Project</a></li>
 </ul>
 </li>
-<li><a href="#org1bef955">2. <span class="todo TODO">TODO</span> The Plan</a>
+<li><a href="#orgf5f3472">2. <span class="todo TODO">TODO</span> The Plan</a>
 <ul>
-<li><a href="#org6783e29">2.1. <code>[100%]</code> Bare minimum to be useful</a></li>
+<li><a href="#org8e692f0">2.1. <code>[100%]</code> Bare minimum to be useful</a></li>
 </ul>
 </li>
-<li><a href="#org5ea4735">3. ert-it</a></li>
-<li><a href="#org0113af1">4. tests</a></li>
+<li><a href="#orge0bc43f">3. ert-it</a></li>
+<li><a href="#org2ad9f4f">4. tests</a></li>
 </ul>
 </div>
 </div>
 
 
-<a id="orged34223"></a>
+<a id="org0d65268"></a>
 
 # README
 
  
 
 
-<a id="org28e7c5c"></a>
+<a id="org254261c"></a>
 
 ## Intro
 
-Please see the documentation in ert-it.el for now
+A wrapper for ert to easily run tests.
 
 
-<a id="orgd897343"></a>
+<a id="org686dae7"></a>
 
 ## About this Project
 
-Uses Babel Org, everything is in one file: <ert-it.md>, where
-all the changes should go.
+Uses Babel Org, everything, including the \`README.md\` file, is
+generated form a single file, \`ert-it.org,\` where all the changes should go.
 
 
-<a id="org1bef955"></a>
+<a id="orgf5f3472"></a>
 
 # The Plan
 
 
-<a id="org6783e29"></a>
+<a id="org8e692f0"></a>
 
 ## <code>[100%]</code> Bare minimum to be useful
 
@@ -57,7 +57,7 @@ all the changes should go.
     -   [X] feed it to ert
 
 
-<a id="org5ea4735"></a>
+<a id="orge0bc43f"></a>
 
 # ert-it
 
@@ -96,7 +96,7 @@ This functon should:
     ;;; ert-it ends here
 
 
-<a id="org0113af1"></a>
+<a id="org2ad9f4f"></a>
 
 # tests
 

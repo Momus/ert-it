@@ -8,11 +8,11 @@
   :END:
 
 *** Intro
-    Please see the documentation in ert-it.el for now
+    A wrapper for ert to easily run tests.
 
 *** About this Project
-    Uses Babel Org, everything is in one file: file:ert-it.org, where
-    all the changes should go.
+    Uses Babel Org, everything, including the `README.md` file, is
+    generated form a single file, `ert-it.org,` where all the changes should go.
 
 * TODO The Plan
 *** [100%] Bare minimum to be useful
