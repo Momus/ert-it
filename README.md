@@ -2,39 +2,39 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org61a586b">1. README</a>
+<li><a href="#orged34223">1. README</a>
 <ul>
-<li><a href="#org2bbeba2">1.1. Intro</a></li>
-<li><a href="#org9f85ce8">1.2. About this Project</a></li>
+<li><a href="#org28e7c5c">1.1. Intro</a></li>
+<li><a href="#orgd897343">1.2. About this Project</a></li>
 </ul>
 </li>
-<li><a href="#orgfcb578c">2. <span class="todo TODO">TODO</span> The Plan</a>
+<li><a href="#org1bef955">2. <span class="todo TODO">TODO</span> The Plan</a>
 <ul>
-<li><a href="#org040bea8">2.1. <code>[0%]</code> Bare minimum to be useful</a></li>
+<li><a href="#org6783e29">2.1. <code>[100%]</code> Bare minimum to be useful</a></li>
 </ul>
 </li>
-<li><a href="#org8c08011">3. ert-it</a></li>
-<li><a href="#orgab6c919">4. tests</a></li>
+<li><a href="#org5ea4735">3. ert-it</a></li>
+<li><a href="#org0113af1">4. tests</a></li>
 </ul>
 </div>
 </div>
 
 
-<a id="org61a586b"></a>
+<a id="orged34223"></a>
 
 # README
 
  
 
 
-<a id="org2bbeba2"></a>
+<a id="org28e7c5c"></a>
 
 ## Intro
 
 Please see the documentation in ert-it.el for now
 
 
-<a id="org9f85ce8"></a>
+<a id="orgd897343"></a>
 
 ## About this Project
 
@@ -42,22 +42,22 @@ Uses Babel Org, everything is in one file: <ert-it.md>, where
 all the changes should go.
 
 
-<a id="orgfcb578c"></a>
+<a id="org1bef955"></a>
 
 # The Plan
 
 
-<a id="org040bea8"></a>
+<a id="org6783e29"></a>
 
-## <code>[0%]</code> Bare minimum to be useful
+## <code>[100%]</code> Bare minimum to be useful
 
--   [-] In a .el file:
+-   [X] In a .el file:
     -   [X] find a corresponding buffer named \*-test.el
     -   [X] evaluate it. The whole thing
-    -   [ ] feed it to ert
+    -   [X] feed it to ert
 
 
-<a id="org8c08011"></a>
+<a id="org5ea4735"></a>
 
 # ert-it
 
@@ -96,7 +96,7 @@ This functon should:
     ;;; ert-it ends here
 
 
-<a id="orgab6c919"></a>
+<a id="org0113af1"></a>
 
 # tests
 
