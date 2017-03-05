@@ -15,11 +15,11 @@
     all the changes should go.
 
 * TODO The Plan
-*** [0%] Bare minimum to be useful
-    - [-] In a .el file:
+*** [100%] Bare minimum to be useful
+    - [X] In a .el file:
       - [X] find a corresponding buffer named *-test.el
       - [X] evaluate it. The whole thing
-      - [ ] feed it to ert
+      - [X] feed it to ert
 
 * ert-it 
   This functon should:
