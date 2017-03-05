@@ -2,34 +2,39 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgc98fee4">1. README</a>
+<li><a href="#org61a586b">1. README</a>
 <ul>
-<li><a href="#org852101f">1.1. Intro</a></li>
-<li><a href="#org82e7611">1.2. About this Project</a></li>
+<li><a href="#org2bbeba2">1.1. Intro</a></li>
+<li><a href="#org9f85ce8">1.2. About this Project</a></li>
 </ul>
 </li>
-<li><a href="#orga81b2fc">2. ert-it</a></li>
-<li><a href="#org736df1c">3. tests</a></li>
+<li><a href="#orgfcb578c">2. <span class="todo TODO">TODO</span> The Plan</a>
+<ul>
+<li><a href="#org040bea8">2.1. <code>[0%]</code> Bare minimum to be useful</a></li>
+</ul>
+</li>
+<li><a href="#org8c08011">3. ert-it</a></li>
+<li><a href="#orgab6c919">4. tests</a></li>
 </ul>
 </div>
 </div>
 
 
-<a id="orgc98fee4"></a>
+<a id="org61a586b"></a>
 
 # README
 
  
 
 
-<a id="org852101f"></a>
+<a id="org2bbeba2"></a>
 
 ## Intro
 
 Please see the documentation in ert-it.el for now
 
 
-<a id="org82e7611"></a>
+<a id="org9f85ce8"></a>
 
 ## About this Project
 
@@ -37,11 +42,29 @@ Uses Babel Org, everything is in one file: <ert-it.md>, where
 all the changes should go.
 
 
-<a id="orga81b2fc"></a>
+<a id="orgfcb578c"></a>
+
+# The Plan
+
+
+<a id="org040bea8"></a>
+
+## <code>[0%]</code> Bare minimum to be useful
+
+-   [-] In a .el file:
+    -   [X] find a corresponding buffer named \*-test.el
+    -   [X] evaluate it. The whole thing
+    -   [ ] feed it to ert
+
+
+<a id="org8c08011"></a>
 
 # ert-it
 
-    ls -d $(pwd)
+This functon should:
+
+1.  look for any tests in the current buffer. Evaluate those functons.
+2.  look recuresivelly for a -test.el file matching current buffer name,
 
     ;;; package --- Summary
     ;; Find and run all your tests.
@@ -51,19 +74,29 @@ all the changes should go.
     ;; It!\" runs through your head.
     
     ;;; Code:
+    (defun ert-file ()
+      "Take name of the current buffer, make it into a test file."
+      (concat
+       (file-name-sans-extension (expand-file-name (buffer-name)))
+       "-test.el"))
+    
+    
     (defun ert-it ()
       "Look for a test file recursively in the working directory.
     Then evaluate and feed it into \\[ert].
     
-    With \\[universal-argument] it will grab all files of the
-    type \"*-test.el\" recursively in the working directory."
-      (interactive))
+        \\[TODO] With \\[universal-argument] it will grab all files of the
+        type \"*-test.el\" recursively in the working directory."
+      (interactive)
+      (load (ert-file))
+      (ert-run-tests-interactively t))
+    
     
     (provide 'ert-it)
     ;;; ert-it ends here
 
 
-<a id="org736df1c"></a>
+<a id="orgab6c919"></a>
 
 # tests
 
