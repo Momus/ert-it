@@ -14,31 +14,46 @@
     Uses Babel Org, everything is in one file: file:ert-it.org, where
     all the changes should go.
 
+* TODO The Plan
+*** [0%] Bare minimum to be useful
+    - [-] In a .el file:
+      - [ ] find a corresponding buffer named *-test.el
+      - [ ] evaluate it. The whole thing
+      - [ ] feed it to ert
+
 * ert-it 
-  #+BEGIN_SRC sh
-  ls -d $(pwd)
-  #+END_SRC
-
-  #+RESULTS:
-  : /etc
-
-
+  This functon should:
+  1. look for any tests in the current buffer. Evaluate those functons.
+  2. look recuresivelly for a -test.el file matching current buffer name, 
   #+BEGIN_SRC emacs-lisp :tangle ert-it.el
     ;;; package --- Summary
     ;; Find and run all your tests.
 
     ;;; Commentary:
+
     ;; Best used while the tune to Michael Jackson's \"Beat
     ;; It!\" runs through your head.
 
     ;;; Code:
+
+    (defun ert-file ()
+      "Take name of the current buffer, make it into a test file."
+      (concat (file-name-sans-extension (buffer-name))
+              "-test.el"))
+
     (defun ert-it ()
       "Look for a test file recursively in the working directory.
     Then evaluate and feed it into \\[ert].
 
-    With \\[universal-argument] it will grab all files of the
-    type \"*-test.el\" recursively in the working directory."
-      (interactive))
+        With \\[universal-argument] it will grab all files of the
+        type \"*-test.el\" recursively in the working directory."
+      (interactive)
+      )
+
+
+
+
+
 
     (provide 'ert-it)
     ;;; ert-it ends here
