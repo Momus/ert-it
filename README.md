@@ -1,54 +1,41 @@
-<div id="table-of-contents">
-<h2>Table of Contents</h2>
-<div id="text-table-of-contents">
-<ul>
-<li><a href="#org75273f9">1. README</a>
-<ul>
-<li><a href="#org3352538">1.1. Intro</a></li>
-<li><a href="#org010eab9">1.2. About this Project</a></li>
-</ul>
-</li>
-<li><a href="#orgb7888a1">2. <span class="todo TODO">TODO</span> The Plan</a>
-<ul>
-<li><a href="#orgce132c6">2.1. <code>[100%]</code> Bare minimum to be useful</a></li>
-<li><a href="#orgd69b4c0">2.2. <code>[0%]</code> Next Steps</a></li>
-</ul>
-</li>
-<li><a href="#org3e85148">3. ert-it</a></li>
-<li><a href="#orgcc47aa7">4. tests</a></li>
-</ul>
-</div>
-</div>
+- [README](#orgbc8fa1c)
+  - [Intro](#org3e65c14)
+  - [About this Project](#org0f2a13d)
+- [The Plan](#org2897cd0)
+  - [<code>[100%]</code> Bare minimum to be useful](#org807c9ae)
+  - [<code>[0%]</code> Next Steps](#org267541e)
+- [ert-it](#org2d63ab3)
+- [tests](#orge693901)
 
 
-<a id="org75273f9"></a>
+
+<a id="orgbc8fa1c"></a>
 
 # README
 
- 
 
 
-<a id="org3352538"></a>
+
+<a id="org3e65c14"></a>
 
 ## Intro
 
 A wrapper for ert to easily run tests.
 
 
-<a id="org010eab9"></a>
+<a id="org0f2a13d"></a>
 
 ## About this Project
 
-Uses Babel Org, everything, including the \`README.md\` file, is
-generated form a single file, \`ert-it.org,\` where all the changes should go.
+Uses Babel Org, everything, including the \`README.md\` file, is generated form a single file, \`ert-it.org,\` where all the changes should go.
 
 
-<a id="orgb7888a1"></a>
+<a id="org2897cd0"></a>
 
 # The Plan
 
 
-<a id="orgce132c6"></a>
+<a id="org807c9ae"></a>
 
 ## <code>[100%]</code> Bare minimum to be useful
 
@@ -58,63 +45,62 @@ generated form a single file, \`ert-it.org,\` where all the changes should go.
     -   [X] feed it to ert
 
 
-<a id="orgd69b4c0"></a>
+<a id="org267541e"></a>
 
 ## <code>[0%]</code> Next Steps
 
 -   [ ] search subdirectories
 -   [ ] get all \*-test.el files
+-   [ ] look for any tests in the current buffer. Evaluate those functons.
 
 
-<a id="org3e85148"></a>
+<a id="org2d63ab3"></a>
 
 # ert-it
 
-This functon should:
+```emacs-lisp
+;;; ert-it --- Find and run all your tests.
 
-1.  look for any tests in the current buffer. Evaluate those functons.
-2.  look recuresivelly for a -test.el file matching current buffer name,
+;;; Commentary:
+;; Best used while the tune to Michael Jackson's \"Beat
+;; It!\" runs through your head.
 
-    ;;; ert-it --- Find and run all your tests.
-    
-    ;;; Commentary:
-    ;; Best used while the tune to Michael Jackson's \"Beat
-    ;; It!\" runs through your head.
-    
-    ;;; Code:
-    (defun ert-file ()
-      "Take name of the current buffer, make it into a test file."
-      (concat
-       (file-name-sans-extension (expand-file-name (buffer-name)))
-       "-test.el"))
-    
-    
-    (defun ert-it ()
-      "Look for a test file in the working directory.
-    Then evaluate and feed it into \\[ert]."
-    
-      (interactive)
-      (save-buffer)
-      (ert-delete-all-tests)
-      (load (ert-file))
-      (ert-run-tests-interactively t))
-    
-    
-    (provide 'ert-it)
-    ;;; ert-it ends here
+;;; Code:
+(defun ert-file ()
+  "Take name of the current buffer, make it into a test file."
+  (concat
+   (file-name-sans-extension (expand-file-name (buffer-name)))
+   "-test.el"))
 
 
-<a id="orgcc47aa7"></a>
+(defun ert-it ()
+  "Look for a test file in the working directory.
+Then evaluate and feed it into \\[ert]."
+
+  (interactive)
+  (save-buffer)
+  (ert-delete-all-tests)
+  (load (ert-file))
+  (ert-run-tests-interactively t))
+
+
+(provide 'ert-it)
+;;; ert-it ends here
+```
+
+
+<a id="orge693901"></a>
 
 # tests
 
-    ;;; ert-it-test.el --- Tests for ert-it
-    
-    ;;; Commentary:
-    
-    ;;; Code:
-    (load-file "ert-it.el")
-    
-    (provide 'ert-it-test)
-    ;;; ert-it-test ends here
+```emacs-lisp
+;;; ert-it-test.el --- Tests for ert-it
 
+;;; Commentary:
+
+;;; Code:
+(load-file "ert-it.el")
+
+(provide 'ert-it-test)
+;;; ert-it-test ends here
+```

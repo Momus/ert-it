@@ -24,11 +24,10 @@
 *** [0%] Next Steps
     - [ ] search subdirectories
     - [ ] get all *-test.el files
+    - [ ] look for any tests in the current buffer. Evaluate those functons.
 
 * ert-it 
-  This functon should:
-  1. look for any tests in the current buffer. Evaluate those functons.
-  2. look recuresivelly for a -test.el file matching current buffer name, 
+  
   #+BEGIN_SRC emacs-lisp :tangle ert-it.el
     ;;; ert-it --- Find and run all your tests.
 
