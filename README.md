@@ -2,39 +2,40 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org0d65268">1. README</a>
+<li><a href="#org75273f9">1. README</a>
 <ul>
-<li><a href="#org254261c">1.1. Intro</a></li>
-<li><a href="#org686dae7">1.2. About this Project</a></li>
+<li><a href="#org3352538">1.1. Intro</a></li>
+<li><a href="#org010eab9">1.2. About this Project</a></li>
 </ul>
 </li>
-<li><a href="#orgf5f3472">2. <span class="todo TODO">TODO</span> The Plan</a>
+<li><a href="#orgb7888a1">2. <span class="todo TODO">TODO</span> The Plan</a>
 <ul>
-<li><a href="#org8e692f0">2.1. <code>[100%]</code> Bare minimum to be useful</a></li>
+<li><a href="#orgce132c6">2.1. <code>[100%]</code> Bare minimum to be useful</a></li>
+<li><a href="#orgd69b4c0">2.2. <code>[0%]</code> Next Steps</a></li>
 </ul>
 </li>
-<li><a href="#orge0bc43f">3. ert-it</a></li>
-<li><a href="#org2ad9f4f">4. tests</a></li>
+<li><a href="#org3e85148">3. ert-it</a></li>
+<li><a href="#orgcc47aa7">4. tests</a></li>
 </ul>
 </div>
 </div>
 
 
-<a id="org0d65268"></a>
+<a id="org75273f9"></a>
 
 # README
 
  
 
 
-<a id="org254261c"></a>
+<a id="org3352538"></a>
 
 ## Intro
 
 A wrapper for ert to easily run tests.
 
 
-<a id="org686dae7"></a>
+<a id="org010eab9"></a>
 
 ## About this Project
 
@@ -42,12 +43,12 @@ Uses Babel Org, everything, including the \`README.md\` file, is
 generated form a single file, \`ert-it.org,\` where all the changes should go.
 
 
-<a id="orgf5f3472"></a>
+<a id="orgb7888a1"></a>
 
 # The Plan
 
 
-<a id="org8e692f0"></a>
+<a id="orgce132c6"></a>
 
 ## <code>[100%]</code> Bare minimum to be useful
 
@@ -57,7 +58,15 @@ generated form a single file, \`ert-it.org,\` where all the changes should go.
     -   [X] feed it to ert
 
 
-<a id="orge0bc43f"></a>
+<a id="orgd69b4c0"></a>
+
+## <code>[0%]</code> Next Steps
+
+-   [ ] search subdirectories
+-   [ ] get all \*-test.el files
+
+
+<a id="org3e85148"></a>
 
 # ert-it
 
@@ -66,8 +75,7 @@ This functon should:
 1.  look for any tests in the current buffer. Evaluate those functons.
 2.  look recuresivelly for a -test.el file matching current buffer name,
 
-    ;;; package --- Summary
-    ;; Find and run all your tests.
+    ;;; ert-it --- Find and run all your tests.
     
     ;;; Commentary:
     ;; Best used while the tune to Michael Jackson's \"Beat
@@ -82,12 +90,12 @@ This functon should:
     
     
     (defun ert-it ()
-      "Look for a test file recursively in the working directory.
-    Then evaluate and feed it into \\[ert].
+      "Look for a test file in the working directory.
+    Then evaluate and feed it into \\[ert]."
     
-        \\[TODO] With \\[universal-argument] it will grab all files of the
-        type \"*-test.el\" recursively in the working directory."
       (interactive)
+      (save-buffer)
+      (ert-delete-all-tests)
       (load (ert-file))
       (ert-run-tests-interactively t))
     
@@ -96,7 +104,7 @@ This functon should:
     ;;; ert-it ends here
 
 
-<a id="org2ad9f4f"></a>
+<a id="orgcc47aa7"></a>
 
 # tests
 

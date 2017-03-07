@@ -1,5 +1,4 @@
-;;; package --- Summary
-;; Find and run all your tests.
+;;; ert-it --- Find and run all your tests.
 
 ;;; Commentary:
 ;; Best used while the tune to Michael Jackson's \"Beat
@@ -14,11 +13,9 @@
 
 
 (defun ert-it ()
-  "Look for a test file recursively in the working directory.
-Then evaluate and feed it into \\[ert].
+  "Look for a test file in the working directory.
+Then evaluate and feed it into \\[ert]."
 
-    \\[TODO] With \\[universal-argument] it will grab all files of the
-    type \"*-test.el\" recursively in the working directory."
   (interactive)
   (save-buffer)
   (ert-delete-all-tests)
